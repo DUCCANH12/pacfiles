@@ -11,10 +11,10 @@ function FindProxyForURL(url, host) {
         "PROXY 27.64.163.40:13325"
     ];
 
-    // Chọn ngẫu nhiên một proxy từ danh sách
+    // Nếu có proxy trong danh sách thì chọn ngẫu nhiên
     if (proxyList.length > 0) {
         var randomIndex = Math.floor(Math.random() * proxyList.length);
-        return proxyList[randomIndex];
+        return proxyList[randomIndex] + "; DIRECT";
     }
 
     // Nếu không có proxy, dùng kết nối trực tiếp
